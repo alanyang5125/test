@@ -1,0 +1,117 @@
+:root {
+  --green: #00FF00;
+  --white: #FFFFFF;
+  --black: #000000;
+  --mapSize:40px;
+  --unitSize:30px;
+  
+}
+
+[draggable="true"] {
+  /*
+	  To prevent user selecting inside the drag source
+  */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+ui {
+	
+  position: relative;
+  border:#000000 1px solid;
+  height: 80px; 
+  width: 300px; 
+  display: flex;
+  flex-wrap:wrap ; 
+  justify-content:space-around;
+  align-items:center;
+  z-index:1;	
+	
+}
+
+body {
+    font-family: monospace;
+}
+
+ul {
+    font-family: helvetica;
+}
+
+.light-theme {
+  color: #000000;
+  background: #AAAAAA;
+}
+.dark-theme {
+  color: #000000;
+  background: #888888;
+}
+.btn {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  font-size:12px;
+  border-radius: 50%;
+  border: none;
+}
+mapData{
+  position: relative;
+  /* border:#000000 1px solid; */
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-wrap:wrap ;
+  justify-content:left;
+  align-items:left;
+  z-index:1;
+}
+
+mapRow{
+	width: 100%;
+}
+
+mapUnit{
+  position: relative;
+  justify-content:center;
+  align-items:center;  
+  padding:5px;
+  display: flex;  
+  height: var(--mapSize);
+  width: var(--mapSize);
+  border-radius: 10%;
+  border-style:solid;
+  border-color:black;
+  /*background-color:yellow;*/
+  z-index:2;  
+}
+mapUnit.black{
+	background-color:black;
+}
+mapUnit.white{
+	background-color:white;
+}
+mapUnit.gray{
+	background-color:gray;
+}
+.unitChess {
+  position: relative;
+  padding:5px;
+  //display: flex;  
+  height: var(--unitSize);
+  width: var(--unitSize);
+  border-radius: 50%;
+  border-style:solid;
+  border-color:black;
+  z-index:3;  
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  //object-fit:cover;   
+  -ms-user-select: none;  
+  draggable : 'true';
+  /* border:#0000FF 5px solid; */
+}
+
+
