@@ -1,7 +1,7 @@
 ememryA,9,8,0,1,0,e1,,
 ememryB,9,7,0,1,0,e2,,
 ememryC,8,7,0,1,0,e3,,
-ememryD,11,9,0,1,1,tank,,
+ememryD,10,9,0,1,1,tank,,
 ememryE,9,9,0,1,0,e4,,
 ememryF,8,8,0,1,0,e5,,
 teammateF,1,1,1,0,0,dark,,
