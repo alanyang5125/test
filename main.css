@@ -56,6 +56,9 @@ ul {
   border-radius: 50%;
   border: none;
 }
+.btn:hover {
+	transform: scale(1.2);
+}
 mapData{
   position: relative;
   /* border:#000000 1px solid; */

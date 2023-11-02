@@ -153,6 +153,14 @@ switcher.addEventListener('click', function() {
 	
 	//set mapContainer Width and height
 	var mapContainer = document.querySelector(".mapData");
+	
+
+    var child = mapContainer.lastElementChild;  
+    while (child) { 
+            mapContainer.removeChild(child); 
+            child = mapContainer.lastElementChild; 
+    }	
+	
 	mapContainer.style.width=mapUnitSize*(mapColNum+10)+mapUnitSize/2+"px";
 	var count=0;
 	//create element
@@ -467,6 +475,9 @@ function loadMapData()
 	
 	let mapArr = mapContent.split("\n");
 	
+	mapColNum=0;
+	mapRowNum=0;
+	mapData = [,];
 	for(var i=0;i<mapArr.length;i++)
 	{
 		if(mapArr[i].length>5)
@@ -559,52 +570,6 @@ function loadRuleData()
 	//console.log(ruleInfo);
 }
 function loadFile(filePath) {
-//for frontend method
-  // if (filePath.includes("mapList"))
-  // {
-	// var a ="地界幻境"; 
-	// return a;
-  // }
-  // if (filePath.includes("進場"))
-  // {
-	// var a ="ememryA,7,14,0,1,0,e1,,\nememryB,6,15,0,1,0,e2,,\nememryC,5,15,0,1,0,e3,,\nememryD,6,14,0,1,1,tank,,\nememryE,5,14,0,1,0,e4,,\nememryF,7,15,0,1,0,e5,,\nteammateF,6,2,1,0,0,dark,,\nteammatea,5,1,0,0,0,teammate,,\nteammateb,7,2,0,0,0,teammate,,\nteammatec,5,2,0,0,0,teammate,,\nteammated,6,1,0,0,0,teammate,,\nteammate1,4,1,0,0,0,teammate,,\n"; 
-	// return a;
-  // }
-  // if (filePath.includes("mapData"))
-  // {
-	// var a ="44400333333300444\n"+
-		   // "44400030003000444\n"+
-		   // "44000030003000044\n"+
-		   // "44000033333000044\n"+
-		   // "00000003330000000\n"+
-		   // "00000000000000000\n"+
-		   // "00000000000000000\n"+
-		   // "00000000000000000\n"+
-		   // "00000003330000000\n"+
-		   // "44000033333000044\n"+
-		   // "44000030003000044\n"+
-		   // "44400030003000444\n"+
-		   // "44400333333300444\n"; 
-	// return a;
-  // }
-  // if (filePath.includes("PullRule"))
-  // {
-	// var a ="//before\n\
- // 4, 9,14,19,24\n\
- // 3, 8,13,18,23\n\
- // 2, 7,25,17,22\n\
- // 1, 6,11,16,21\n\
-// 12, 5,10,15,20\n\
-// \n\
-// //after\n\
-// 23,19,12,20,24\n\
-// 17, 7, 4, 8,18\n\
-// 10, 2,25, 3,11\n\
-// 15, 5, 1, 6,16\n\
-// 21,13, 9,14,22\n";
-	// return a;
-  // }
-//for backend method
 
   var result = null;
   var xmlhttp = new XMLHttpRequest();
