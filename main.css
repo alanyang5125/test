@@ -16,7 +16,57 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+bigContainer{
+  position: relative;
+ /* border:#AA0000 2px solid;*/
+  height: 180px; 
+  width: 1200px; 
+  display: flex;
+  /*flex-wrap:wrap ; */
+  align-items: stretch;
+  /*justify-content:space-around;
+  align-items:center;*/
+  z-index:1;	
+}
+bigBlock{	
+  position: relative;
+  height: 180px; 
+  width: 300px; 
+  display: flex;
+  flex-wrap:wrap ; 
+  align-items:stretch;
+  z-index:1;	
+}
+textBlock{
+	 text-align:left;
+}
+/* item{ */
+	
+  /* position: relative; */
+  /* border:#000000 1px solid; */
+  /* height: 60px;  */
+  /* width: 200px;  */
+  /* display: flex; */
+  /* flex-wrap:wrap ;  */
+  /* justify-content:space-around; */
+  /* align-items:center; */
+  /* z-index:1;		 */
+	
+/* } */
 
+ui_B {
+	
+  position: relative;
+  border:#000000 1px solid;
+  height: 160px; 
+  width: 400px; 
+  display: flex;
+  flex-wrap:wrap ; 
+  justify-content: space-around;
+  align-items:start;
+  z-index:1;	
+	
+}
 
 ui {
 	
