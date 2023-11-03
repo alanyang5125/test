@@ -398,11 +398,16 @@ function makePull(target,targetX,targetY,mapDataTmp)
 			var tmpY = targetY + (ruleInfo[ruleAfterIndex][3] - 2);
             if (tmpX >= 0 && tmpX < mapRowNum && tmpY >= 0 && tmpY < mapColNum)
             {
-                if (mapDataTmp[tmpX][tmpY] == 0)
+                if (mapDataTmp[tmpX][tmpY] == 0)	//anyUnit
                 {
                     mapDataTmp[tmpX][tmpY] = (10 + hitIndex[i]);
                     break;
                 }
+				if(mapDataTmp[tmpX][tmpY] == 3 && unitData[hitIndex[i]].fly==1)	//fly unit
+				{
+                    mapDataTmp[tmpX][tmpY] = (10 + hitIndex[i]);
+                    break;					
+				}
             }
             ruleAfterIndex++;
         }
