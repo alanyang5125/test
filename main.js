@@ -382,7 +382,7 @@ function makePull(target,targetX,targetY,mapDataTmp)
                 if (tmpX == unitData[j].x && tmpY == unitData[j].y && unitData[j].enemyType == 1)
                 {
 					hitIndex[hitCount]=j;
-					mapDataTmp[tmpX][tmpY] = 0;    //returnZero;
+					mapDataTmp[tmpX][tmpY] = mapData[tmpX][tmpY];    //returnToMapDefault;
 					hitCount++;
                 }
             }
@@ -390,6 +390,12 @@ function makePull(target,targetX,targetY,mapDataTmp)
     }
 	console.log(hitIndex);
     var ruleAfterIndex = 1;
+	
+	for(var i=0;i<=25;i++)
+	{
+		ruleInfo[i][5]=1;
+	}
+	
     for (var i = 0; i < hitIndex.length; i++)
     {
         while (true)
@@ -398,14 +404,18 @@ function makePull(target,targetX,targetY,mapDataTmp)
 			var tmpY = targetY + (ruleInfo[ruleAfterIndex][3] - 2);
             if (tmpX >= 0 && tmpX < mapRowNum && tmpY >= 0 && tmpY < mapColNum)
             {
-                if (mapDataTmp[tmpX][tmpY] == 0)	//anyUnit
+                if (mapDataTmp[tmpX][tmpY] == 0 && ruleInfo[ruleAfterIndex][5]==1)	//anyUnit
                 {
                     mapDataTmp[tmpX][tmpY] = (10 + hitIndex[i]);
+					ruleInfo[ruleAfterIndex][5]==0;
+					ruleAfterIndex=1;					
                     break;
                 }
-				if(mapDataTmp[tmpX][tmpY] == 3 && unitData[hitIndex[i]].fly==1)	//fly unit
+				if(mapDataTmp[tmpX][tmpY] == 3 && unitData[hitIndex[i]].fly==1 && ruleInfo[ruleAfterIndex][5]==1)	//fly unit
 				{
                     mapDataTmp[tmpX][tmpY] = (10 + hitIndex[i]);
+					ruleInfo[ruleAfterIndex][5]==0;
+					ruleAfterIndex=1;
                     break;					
 				}
             }
